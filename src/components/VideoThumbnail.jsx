@@ -6,18 +6,18 @@ dayjs.extend(relativeTime);
 
 const VideoThumbnail = ({ video }) => {
   return (
-    <div className="flex gap-2 w-full">
+    <div className="flex flex-col lg:flex-row gap-2 w-full">
       <div
-        className="bg-gray-500 w-[15vw] aspect-video"
+        className="bg-gray-500 w-full lg:w-[15vw] aspect-video"
         style={{
           backgroundImage: `url(${video?.snippet?.thumbnails?.medium?.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       ></div>
-      <div className="flex flex-col w-[15vw]">
-      <span className=" font-semibold">{formatText(video.snippet.title)}</span>
-      <span className="text-sm">{dayjs(video.snippet.publishedAt).fromNow()}</span>
+      <div className="flex flex-col w-full lg:w-[15vw]">
+        <span className=" font-semibold">{formatText(video.snippet.title)}</span>
+        <span className="text-sm">{dayjs(video.snippet.publishedAt).fromNow()}</span>
       </div>
     </div>
   );

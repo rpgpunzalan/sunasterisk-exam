@@ -24,14 +24,14 @@ function App() {
     <div className="flex flex-col w-screen h-screen overflow-y-auto">
       <Header />
       {searchResults.length > 0 && (
-        <div className="flex gap-10 w-full h-full">
+        <div className="lg:flex-row flex-col flex gap-10 w-full h-full">
           {/* Viewport */}
           <div className="flex flex-col grow h-full p-10 gap-2">
             <VideoPlayer video={activeVideo} />
             <VideoMeta video={activeVideo} />
           </div>
           {/* Next videos */}
-          <div className="flex flex-col w-[30vw] gap-5 p-5 overflow-y-auto h-full">
+          <div className="grid grid-cols-4 lg:flex flex-col w-full lg:w-[30vw] gap-5 p-5 lg:overflow-y-auto h-full">
             {nextVideos?.map((video) => (
               <div key={video.id.videoId} onClick={()=>{playVideo(video)}} className="hover:cursor-pointer">
                 <VideoThumbnail video={video} />
