@@ -5,9 +5,7 @@ import "./index.css";
 import { SearchProvider } from "./hooks/useSearch.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <SearchProvider>
-      <App />
-    </SearchProvider>
-  </React.StrictMode>
+  <SearchProvider>
+    <App />
+  </SearchProvider>
 );
